@@ -12,3 +12,18 @@ def approximate_pi(n_terms):
     total = sum(leibniz_series)
     pi_approx = 4 * total
     return pi_approx
+
+
+
+"""
+def approximate_pi(n_terms):
+    leibniz_series = []
+    sign = 1.0     # start positive and change 
+    denom = 1      #the odd numbers 1,3,5,7..
+    for _ in range(n_terms):
+        term = sign / denom
+        leibniz_series.append(term)
+        sign = -sign
+        denom += 2
+    return 4 * sum(leibniz_series)
+    """
