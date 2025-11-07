@@ -1,14 +1,10 @@
 def approximate_pi(n_terms):
-    
-    def approximate_pi(n_terms):
     total = 0.0
-    sign = 1.0   # במקום (-1)**n
-    denom = 1    # 1, 3, 5, ...
-    for _ in range(n_terms):
-        total += sign / denom
-        sign = -sign
-        denom += 2
+    for n in range(n_terms):
+        term = (-1.0)**n / (2*n + 1)
+        total += term
     return 4.0 * total
+
     
     
     """
