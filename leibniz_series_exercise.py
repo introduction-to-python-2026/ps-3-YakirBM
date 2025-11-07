@@ -1,8 +1,20 @@
 def approximate_pi(n_terms):
+    
+    def approximate_pi(n_terms):
+    total = 0.0
+    sign = 1.0   # במקום (-1)**n
+    denom = 1    # 1, 3, 5, ...
+    for _ in range(n_terms):
+        total += sign / denom
+        sign = -sign
+        denom += 2
+    return 4.0 * total
+    
+    
     """
     Approximate π using the Leibniz series with n_terms terms.
     π ≈ 4 * Σ_{k=0}^{n_terms-1} (-1)^k / (2k+1)
-    """
+    
     if not isinstance(n_terms, int) or n_terms < 0:
         raise ValueError("n_terms must be a non-negative integer")
 
@@ -12,6 +24,7 @@ def approximate_pi(n_terms):
     total = sum(leibniz_series)
     pi_approx = 4 * total
     return pi_approx
+    """
 
 
 
